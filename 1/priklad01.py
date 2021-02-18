@@ -19,4 +19,4 @@ if kodBaliku not in baliky:
 elif baliky[kodBaliku] is True:
     print("Balík byl předán kurýrovi.")
 else:
-    print("Balík zatím nebyl předán kurýrovi.")
+    print("Balík zatím nebyl předán kurýrovi!")

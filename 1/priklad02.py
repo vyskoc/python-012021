@@ -34,4 +34,4 @@ elif kusy > sklad[kodSoucastky]:
 else:
     print(f"Součástek {kodSoucastky} máme dostatek, dodáme {kusy} ks.")
     sklad[kodSoucastky] -= kusy
-#print(sklad)
+print(sklad)
