@@ -14,13 +14,13 @@ prodeje2020 = {
 }
 # co se zdvojenou položkou "zkus mě chytit"?
 
+prodeje = {**prodeje2020, **prodeje2019}
+for key, value in prodeje.items():
+   if key in prodeje2020 and key in prodeje2019:
+           prodeje[key] = value + prodeje2020[key]
+
 kniha = str(input("Zadej název knihy: "))
-if kniha not in prodeje2020:
-    if kniha not in prodeje2019:
-        print("Knihu jsme vůbec neprodávali.")
-elif kniha not in prodeje2020:
-    print(prodeje2019[kniha])
-elif kniha not in prodeje2019:
-    print(prodeje2020[kniha])
+if kniha not in prodeje:
+    print("Knihu jsme vůbec neprodávali.")
 else:
-    print(prodeje2019[kniha]+prodeje2020[kniha])
+    print(prodeje[kniha])
