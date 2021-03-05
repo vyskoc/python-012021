@@ -2,58 +2,37 @@
 
 odvetvi = input("Odvětví: ")
 obrat = int(input("Obrat (mil. €): "))
-zeme = str(input("Země: "))
+zeme = input("Země: ")
 konference = input("Konference: ")
 news = input("Newsletter: ")
 
-uspech = 0
-
-def posOdvetvi(odvetvi):
-    uspechO = 0
+def parametry(odvetvi, obrat, zeme, konference, news):
+    uspech = 0
     if odvetvi == "automotive":
-        uspechO = 3
+        uspech += 3
     elif odvetvi == "retail":
-        uspechO = 2
-    return  uspechO
-
-def posObrat(obrat):
+        uspech += 2
     if obrat <= 10:
-        uspechOb = 0
+        uspech += 0
     elif obrat <= 1000:
-        uspechOb = 3
+        uspech += 3
     else:
-        uspechOb = 1
-    return uspechOb
-
-def posZeme(zeme):
+        uspech += 1
     if zeme == "Slovensko" or zeme == "Česko":
-        uspechZ = 2
+        uspech += 2
     elif zeme == "Německo" or zeme == "Francie":
-        uspechZ = 1
-    else:
-        uspechZ = 0
-    return uspechZ
-
-def posKonference(konference = False):
-    uspechK = 0
+        uspech += 1
     if konference:
-        uspechK = 1
-    return uspechK
-
-def posNews(news = False):
-    uspechN = 0
+        uspech += 1
     if news:
-        uspechN = 1
-    return uspechN
+        uspech += 1
+    if uspech <= 5:
+        posouzeni = "malá"
+    elif uspech <= 8:
+        posouzeni = "střední"
+    else:
+        posouzeni = "velká"
+    return print(f"Zakázka dosahla {uspech} bodů, šance na záskání je {posouzeni}.")
 
-uspech = posOdvetvi(odvetvi) + posObrat(obrat) + posZeme(zeme) + posKonference(konference) + posNews(news)
-
-if uspech <= 5:
-    posouzeni = "malá"
-elif uspech <= 8:
-    posouzeni = "střední"
-else:
-    posouzeni = "velká"
-
-print(f"Zakázka dosahla {uspech} bodů, šance na záskání je {posouzeni}.")
+parametry(odvetvi, obrat,zeme, konference, news)
 

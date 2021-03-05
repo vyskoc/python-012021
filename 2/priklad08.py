@@ -22,11 +22,12 @@ tel_cislo = "+420 734 123 456"
 tel_cislo = tel_cislo.replace(" ", "")
 """
 tel_cislo = input("Zadej telefonní číslo: ")
+predvolba = tel_cislo[:-9]
 
 def overeniCisla(tel_cislo):
     tel_cislo = tel_cislo.replace(" ", "")
     delkaCisla = len(tel_cislo)
-    if delkaCisla == 13 or delkaCisla == 9:
+    if (delkaCisla == 13 and "+420" in predvolba) or delkaCisla == 9:
         odpoved = True
     else:
         odpoved = False
