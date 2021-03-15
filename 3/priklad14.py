@@ -17,5 +17,6 @@ class Employee:
         cistaMzda = self.salary - self.get_tax()
         return cistaMzda
 franta = Employee("FrantišekV", "skladník", 28000, 4)
+
 print(franta.get_net_salary())
 print(franta.cistaMzda())

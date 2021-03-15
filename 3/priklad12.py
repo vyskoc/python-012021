@@ -28,6 +28,7 @@ def dotaz(zadost):
     else:
         return "Auto není v systému."
 
+
 print(dotaz(input("Jaké vozidlo si přejete půjčit: ")))
 print(dotaz(input("Jaké vozidlo si přejete půjčit: ")))
 
