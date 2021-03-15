@@ -1,5 +1,4 @@
 from datetime import datetime
-
 datum = datetime.strptime(input("Zadej datum: "),"%d.%m.%Y")
 kusy = int(input("Zadej počet lístků: "))
 zacPrvni = datetime(2021, 7, 1)

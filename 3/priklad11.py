@@ -1,5 +1,4 @@
 #Evidence aut
-
 class Auta:
     def __init__(self,rz, znacka, km):
         self.rz = rz
