@@ -9,30 +9,27 @@ class Auta:
 
     def pujc_auto(self):
         if self.obsazenost:
-            print("Potvrzuji zapůjčení vozidla")
-            print(self.get_info())
             self.obsazenost = False
+            return f"{self.get_info()} Potvrzuji zapůjčení vozidla"
         else:
-            print("Vozidlo není k dispozici")
+            return "Vozidlo není k dispozici"
 
     def get_info(self):
-        print(f"RZ vozidla je {self.rz} a jedná se o {self.znacka}.")
+        return f"RZ vozidla je {self.rz} a jedná se o {self.znacka}."
 
-    def dotaz(self):
-        zadost = input("Jaké vozidlo si přejete půjčit: ")
-        if zadost in self.znacka:
-            print(self.pujc_auto())
 a1 = Auta ("4A2 3020", "Peugeot 403 Cabrio", 47534)
 a2 = Auta ("1P3 4747", "Škoda Octavia",41253)
 
-print(a1.dotaz())
-print(a1.dotaz())
-#print(a1.pujc_auto())
+def dotaz(zadost):
+    if zadost in a1.znacka:
+        return a1.pujc_auto()
+    elif zadost in a2.znacka:
+        return a2.pujc_auto()
+    else:
+        return "Auto není v systému."
 
+print(dotaz(input("Jaké vozidlo si přejete půjčit: ")))
+print(dotaz(input("Jaké vozidlo si přejete půjčit: ")))
 
-#zadost = input("Jaké vozidlo si přejete půjčit: ")
-#
-# if zadost in a2.znacka:
-#     print("ok")
 
 
